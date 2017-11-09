@@ -1,0 +1,14 @@
+.cont {
+  width: 100%; }
+  .cont .head {
+    text-align: center;
+    margin-left: 2em; }
+  .cont .content {
+    text-align: center; }
+    .cont .content .intro {
+      padding: 1em; }
+    .cont .content ul .content-menu-item {
+      list-style-type: none;
+      padding: 2em; }
+
+/*# sourceMappingURL=hometwo.css.map */

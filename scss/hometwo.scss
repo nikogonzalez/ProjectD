@@ -1,0 +1,21 @@
+// scss --watch scss:css to start
+
+.cont {
+    width: 100%;
+    .head {
+        text-align: center;
+        margin-left: 2em;
+    }
+    .content {
+        text-align: center;
+        .intro {
+            padding: 1em;
+        }
+        ul {
+            .content-menu-item {
+                list-style-type: none;
+                padding: 2em;
+            }
+        }
+    }
+}
