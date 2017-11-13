@@ -4,17 +4,37 @@
 <head>
   <title> Project Dick </title>
   <meta charset = "UTF-8">
-  <link rel = "stylesheet" href = "css/styles.css">
+  <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
 
-<h1 style = "text-align:center;"> Project Dick </h1>
-<hr>
-<p id = "p01"> Welcome to the Project Dick test page. Project Dick is a Text-based Real Time Strategy game for browsers.</p>
-<hr>
+  <h1 style = "text-align:center;"> Project Dick </h1>
+  <hr>
+  <p id = "p01"> Welcome to the Project Dick test page. Project Dick is a Text-based Real Time Strategy game for browsers.</p>
+  <form style = "text-align:center" action = "/base.php" method = "post">
+    <label><b> Sign In: </b></label>
+    <input type = "text" placeholder = "Username" name = "username" size = "10">
+    <input type = "password" placeholder = "Enter Password" name = "password" size = "10">
+    <input type = "submit" value = "Log In">
+  <hr>
 
-<h4 class = "sectionHeader"> 1. Create a Profile </h4>
-<h4 class = "sectionHeader"> 2. Choose a Faction </h4>
+  <h4 class = "sectionHeader"> 1. Create a Profile </h4>
+  <p style = "text-align:center"> It is free and fun! </p>
+  <form style = "text-align:center" action = "/base.php" method = "post">
+    <input type = "text" placeholder = "First Name" name = "First Name" required>
+    <input type = "text" placeholder = "Last Name" name = "Last Name" required><br>
+    <input type = "text" placeholder = "Email" name = "Email" requierd><br>
+    <br>
+    <input type = "text" placeholder = "Username" name = "Username" required<br>
+    <input type = "password" placeholder = "Password" name = "Password" required><br>
+  </form>
+
+  <h4 class = "sectionHeader"> 2. Choose a Faction </h4>
+  <form style = "text-align:center" action = "/base.php">
+    <input type = "radio" name = "faction" value = "Faction1 " checked = checked> Faction 1
+    <input type = "radio" name = "faction" value = "Faction2 "> Faction 2
+    <br>
+  </form>
 <p style = "text-align:center;"><a class = "button" href = "../project%20dick/base.htm" target = "_self"> 3. Start Playing </a></p>
 </body>
 </html>
