@@ -1,21 +1,39 @@
 // scss --watch scss:css to start
-
-.cont {
+.container {
     width: 100%;
-    .head {
-        text-align: center;
-        margin-left: 2em;
+    text-align: center;
+    .head-container {
+        font-size: 3em;
     }
-    .content {
-        text-align: center;
-        .intro {
-            padding: 1em;
-        }
-        ul {
-            .content-menu-item {
-                list-style-type: none;
-                padding: 2em;
-            }
+
+    .description {
+        margin: 1em;
+    }
+
+    .log-in-container {
+        background-color: #c7d4d4;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 6px;
+        width: 10em;
+        padding: 3.5em 2em;
+
+        .space {
+            padding: 8px;
+            margin: 4px;
         }
     }
+    .profile-container {
+        background-color: #c7d4d4;
+        display: inline-block;
+        margin-left: 6px;
+        padding: 2.6em;
+
+        .faction-container {
+            text-align: left;
+            padding-top: 3em;
+
+        }
+    }
+
 }

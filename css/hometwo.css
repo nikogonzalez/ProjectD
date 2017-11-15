@@ -1,14 +1,27 @@
-.cont {
-  width: 100%; }
-  .cont .head {
-    text-align: center;
-    margin-left: 2em; }
-  .cont .content {
-    text-align: center; }
-    .cont .content .intro {
-      padding: 1em; }
-    .cont .content ul .content-menu-item {
-      list-style-type: none;
-      padding: 2em; }
+.container {
+  width: 100%;
+  text-align: center; }
+  .container .head-container {
+    font-size: 3em; }
+  .container .description {
+    margin: 1em; }
+  .container .log-in-container {
+    background-color: #c7d4d4;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 6px;
+    width: 10em;
+    padding: 3.5em 2em; }
+    .container .log-in-container .space {
+      padding: 8px;
+      margin: 4px; }
+  .container .profile-container {
+    background-color: #c7d4d4;
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2.6em; }
+    .container .profile-container .faction-container {
+      text-align: left;
+      padding-top: 3em; }
 
 /*# sourceMappingURL=hometwo.css.map */
