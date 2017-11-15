@@ -15,23 +15,75 @@
 
      <body>
 
-         <div class="cont">
-             <header class="head">
-                 <h1 class="title">Project Dick</h1>
+         <main class="container">
+             <header class="head-container">
+                 <p class="head-title">Project Homepage</p>
              </header>
-             <main class="content">
-                 <p class="intro">Welcome to the Project Dick test page.
-                 Project Dick is a Text-based Real Time Strategy game for browsers.</p>
-                 <ul class="content-menu">
-                     <li class="content-menu-item">Create a Profile</li>
-                     <li class="content-menu-item">Choose a Faction</li>
-                     <li class="content-menu-item">Start Playing!</li>  
-                 </ul>
-             </main>
+             <hr>
+             <section class="description">
+                 <p class="description-welcome">
+                     Welcome to the Project Dick test page. Project
+                     Dick is a Text-based Real Time Strategy game for
+                     browsers
+                 </p>
+             </section>
+             <hr>
+             <!-- create log in form and style to left side -->
+             <section class="log-in-container">
+                 <form>
+
+                     <label>Sign in:</label>
+                     <input class="space" name="username" placeholder="Username">
+                     <input class="space" name="password" placeholder="Password">
+                     <input class="space" type="submit" value="Log In">
+
+                 </form>
+             </section>
+             <!-- container for create profile form move to right -->
+             <section class="profile-container">
+
+                 <form>
+                     <h2>Join for Free!</h2>
+                    <label>Create a Profile:</label>
+                    <input class="block" name="First Name" type="text" placeholder="First Name">
+                    <input class="block" name="Last Name" type="text" placeholder ="Last Name">
+                    <input class="block" name="Email" type="text" placeholder="Email Address">
+                    <input class="block" name="Username" type="text" placeholder="Username">
+                    <input class="block" name="Password" type="password" placeholder="Password">
+
+                 </form>
+
+                 <section class="faction-container">
+                     <form>
+
+                         <label>Choose a Faction:</label>
+
+                         <label for="faction1" id="faction1" value="faction1">faction1</label>
+                         <input type="radio" name="faction" value="faction1" checked = checked>
+                         <label for="faction2" id="faction2" value="faction2">faction2</label>
+                         <input type="radio" name="faction" value="faction2">
+                         <label for="faction3" id="faction3" value="faction3">faction3</label>
+                         <input type="radio" name="faction" value="faction3">
+                         <label for="faction4" id="faction4" value="faction4">faction4</label>
+                         <input type="radio" name="faction" value="faction4">
+                         <label for="faction5" id="faction5" value="faction5">faction5</label>
+                         <input type="radio" name="faction" value="faction5">
+                         <input type="submit" value="create account">
+
+                     </form>
+                 </section>
+
+             </section>
 
 
-
-         </div>
+             <hr>
+             <section class="play-container">
+                 <a href="#">
+                     <p class="play-title">Play now!</p>
+                 </a>
+             </section>
+             <hr>
+         </main>
 
      </body>
 </html>
