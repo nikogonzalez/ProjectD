@@ -2,7 +2,7 @@
 <html lang = "en-US">
 
 <head>
-  <title>untitled</title>
+  <title>Project Dick Test</title>
   <meta charset = "UTF-8">
 </head>
 <body>

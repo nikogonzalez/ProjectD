@@ -12,12 +12,10 @@
     validate_presence($required_fields);
 
     if(empty($errors)){
-      $username = $_POST['username'];
-      $password = $_POST['password'];
-      $found_user = attempt_login($username, $password);
+      $found_user = attempt_login($_POST['username'], $_POST['password']);
       if($found_user){
-        $_SESSION["user_id"] = $found_user["id"];
-        $_SESSION["username"] = $found_user["username"];
+        $_SESSION['user_id'] = $found_user['id'];
+        $_SESSION['username'] = $found_user['username'];
         redirect_to("base.php");
       } else{
         $_SESSION["message"] = "Username/Password not found.";
@@ -34,23 +32,14 @@
     validate_max_lengths($fields_with_max_length);
 
     if(empty($errors)){
-    //try to Log in
-      $username = mysqli_prep($_POST["username"]);
-      $hashed_password = password_encrypt($_POST["password"]);
-      $firstname = mysqli_prep($_POST["firstname"]);
-      $lastname = mysqli_prep($_POST["lastname"]);
-      $email = mysqli_prep($_POST["email"]);
+      create_new_user($_POST["username"], $_POST["password"], $_POST["firstname"],
+      $_POST["lastname"],$_POST["email"]);
 
+      $new_user_set = find_user_by_username($_POST["username"]);
 
-      $query  = "INSERT INTO user_profile(";
-      $query .= " username, hashed_password, firstname, lastname, email";
-      $query .= ") VALUES (";
-      $query .= "'{$username}', '{$hashed_password}', '{$firstname}', '{$lastname}', '{$email}'";
-      $query .= ")";
-      $result = mysqli_query($db_connection, $query);
-
-      if($result){
-        $_SESSION["message"] ='Registered New User.';
+      if($new_user_set){
+        $_SESSION['user_id'] = $new_user_set['id'];
+        $_SESSION['username'] = $new_user_set['username'];
         redirect_to("choose_faction.php");
       } else{
         $_SESSION["message"] = "Registration failed.";
@@ -73,7 +62,7 @@
              <!--If form submission error, keep username in the login field-->
              <input class="space" type = "text" name="username" value = <?php echo htmlspecialchars($username);?>>
 
-              <?php$_SESSION["username"] = $username;?>
+              <?php $_SESSION['username'] = $username; ?>
              <input class="space" type = "password" name="password" placeholder="Password">
              <input class="space" type= "submit" name="login" value="Log In">
          </form>
