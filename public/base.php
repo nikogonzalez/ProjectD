@@ -3,30 +3,27 @@
 <?php require_once("../includes/db_connection.php")?>
 <?php require_once("../includes/validation_functions.php");?>
 
+<?php confirm_logged_in();?>
 
 <!--TO FIX:
 faction gets pulled from database.
 List recent attacks, pulled from database.
 -->
-<?php include("../includes/layouts/header.php");?>
 
+<?php include("../includes/layouts/header.php");?>
 <?php
   $username = $_SESSION['username'];
-  $user_info = find_user_by_username($username);
+  $user_id = $_SESSION['user_id'];
+  $user_info = find_user_by_id($user_id);
+  $units_list = find_all_units($user_id);
 ?>
-
 <section id = "middle">
-  <h3 id = "h3_1"> Your Base </h3>
+  <h3 id = "h3_1"> <?php echo $username ?>'s Base </h3>
 
   <table style = "width:100%">
       <tr>
         <td style = "width: 25%">
-          <ul id = "commander_options_list">
-            <li><a class = "commander_options" href = "/project%20dick/sandbox/basetwo.php"> Your Base </a>
-            <li><a class = "commander_options" href = "../training.htm"> Train </a>
-            <li><a class = "commander_options" href = "../hometwo.html"> Home </a>
-            <li><a class = "commander_options" href = "../sandbox/basetwo.php?id=<?php echo $id;?>"> Test </a>
-          </ul>
+          <?php include("../includes/layouts/navigation.php");?>
         </td>
         <td ><table id = "commander info">
           <tr>
@@ -38,7 +35,7 @@ List recent attacks, pulled from database.
           </tr>
           <tr>
             <td> Faction </td>
-            <td> <?php echo ucfirst($user_info['faction']); ?> </td>
+            <td> <?php echo ucfirst($units_list['faction']); ?> </td>
           </tr>
         </table>
       </td>
@@ -51,6 +48,7 @@ List recent attacks, pulled from database.
     </tr>
 
   </table>
+</table>
 </section>
 
 <?php include("../includes/layouts/footer.php");?>

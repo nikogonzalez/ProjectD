@@ -2,3 +2,8 @@
 </body>
 
 </html>
+<?php
+  if(isset($db_connection)){
+    mysqli_close($db_connection);
+  }
+ ?>
